@@ -16,20 +16,20 @@ namespace LibraryApp
         public void GetProperties()
         {
             Console.WriteLine("Enter the book's title.");
-            Title = Console.ReadLine();
+            Title = Console.ReadLine().Trim().ToUpper();
             Console.WriteLine("Enter the book's author.");
-            Author = Console.ReadLine();
+            Author = Console.ReadLine().Trim().ToUpper();
             Console.WriteLine("Enter the book's genre.");
-            Genre = Console.ReadLine();
+            Genre = Console.ReadLine().Trim().ToUpper();
             Console.WriteLine("Enter the book's year of publication.");
             PubYear = Convert.ToInt32(Console.ReadLine());
         }
 
         public void AddBookByDefault(string title, string author, string genre, int pubYear)
         {
-            Title = title;
-            Author = author;
-            Genre = genre;
+            Title = title.ToUpper();
+            Author = author.ToUpper();
+            Genre = genre.ToUpper();
             PubYear = pubYear;
         }
     }

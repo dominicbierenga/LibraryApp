@@ -11,38 +11,52 @@ namespace LibraryApp
         static void Main(string[] args)
         {
             List<Book> bookList = new List<Book>();
-
-            //testing
             User user = new User();
-            Book book1 = new Book();
-            Book book2 = new Book();
-            Book book3 = new Book();
-            book1.AddBookByDefault("Alice's Adventures in Wonderland", "Lewis Carroll", "Fantasy", 1865);
-            book2.AddBookByDefault("The Catcher in the Rye", "J.D. Salinger", "Bildungsroman", 1951);
-            book3.AddBookByDefault("Through the Looking Glass", "Lewis Carroll", "Fantasy", 1871);
 
-            bookList.Add(book1);
-            bookList.Add(book2);
-            bookList.Add(book3);
-
-            List<Book> newList = user.FindByAuthor(bookList, "Lewis Carroll");
-            foreach (Book book in newList)
-            {
-                Console.WriteLine(book.Title);
-            }
-
-            bookList.Where(x => x.Author == "Lewis Carroll");
+            UserMenu(user, bookList);
         }
 
-        static void UserMenu()
+        static void UserMenu(User user, List<Book> bookList)
         {
-            Console.WriteLine("Would you like to \n" +
+            while (true)
+            {
+                Console.WriteLine("\nWould you like to \n" +
                 "1. Add a book\n" +
                 "2. Search by title\n" +
                 "3. Search by author\n" +
                 "4. Search by genre\n" +
-                "5. Search by publication year" +
-                "6. Exit");
+                "5. Exit\n" +
+                "Enter a number for a response: ");
+
+                int action = Convert.ToInt32(Console.ReadLine());
+
+                if (action == 1)
+                {
+                    user.AddBook(bookList);
+                }
+                else if (action == 2)
+                {
+                    Console.WriteLine("Enter the title you would like to search for: ");
+                    string title = Console.ReadLine();
+                    user.FindByTitle(bookList, title);
+                }
+                else if (action == 3)
+                {
+                    Console.WriteLine("Enter the author you would like to search for: ");
+                    string author = Console.ReadLine();
+                    user.FindByAuthor(bookList, author);
+                }
+                else if (action == 4)
+                {
+                    Console.WriteLine("Enter the genre you would like to search for: ");
+                    string genre = Console.ReadLine();
+                    user.FindByGenre(bookList, genre);
+                }
+                else if (action == 5)
+                {
+                    user.Quit();
+                }
+            }
         }
     }
 }

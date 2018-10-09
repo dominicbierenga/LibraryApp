@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibraryApp
 {
@@ -77,6 +75,7 @@ namespace LibraryApp
         public void AddBook(List<Book> bookList)
         {
             Book newBook = new Book();
+            newBook.GetProperties();
             bookList.Add(newBook);
         }
 
@@ -85,11 +84,7 @@ namespace LibraryApp
             Console.WriteLine("Are you sure you would like to quit? (y/n)");
             if (Console.ReadLine() == "y")
             {
-
-            }
-            else
-            {
-                
+                Environment.Exit(-1);
             }
         }
     }

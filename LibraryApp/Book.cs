@@ -13,7 +13,7 @@ namespace LibraryApp
         public string Genre { get; set; }
         public int PubYear { get; set; }
 
-        public Book()
+        public void GetProperties()
         {
             Console.WriteLine("Enter the book's title.");
             Title = Console.ReadLine();
@@ -23,6 +23,14 @@ namespace LibraryApp
             Genre = Console.ReadLine();
             Console.WriteLine("Enter the book's year of publication.");
             PubYear = Convert.ToInt32(Console.ReadLine());
+        }
+
+        public void AddBookByDefault(string title, string author, string genre, int pubYear)
+        {
+            Title = title;
+            Author = author;
+            Genre = genre;
+            PubYear = pubYear;
         }
     }
 }

@@ -1,95 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibraryApp
 {
     public class User
     {
-        public List<Book> FindByTitle(List<Book> bookList, string title)
+        public void FindByTitle(List<Book> bookList, string title)
         {
-            List<Book> byTitle = new List<Book>();
-            foreach (Book book in bookList)
+            Console.WriteLine("\nYour search returned the following books.");
+            foreach (Book book in bookList.Where(x => x.Title == title.ToUpper()))
             {
-                if (title == book.Title)
-                {
-                    byTitle.Add(book);
-                }
-            }
-
-            if (!(byTitle.Count() == 0))
-            {
-                return byTitle;
-            }
-            else
-            {
-                Console.WriteLine("No book with that title is in the list.");
-                return null;
+                Console.WriteLine("Title: " + book.Title);
+                Console.WriteLine("Author: " + book.Author);
+                Console.WriteLine("Genre: " + book.Genre);
+                Console.WriteLine("Published: " + book.PubYear);
             }
         }
 
-        public List<Book> FindByAuthor(List<Book> bookList, string author)
+        public void FindByAuthor(List<Book> bookList, string author)
         {
-            List<Book> byAuthor = new List<Book>();
-            foreach (Book book in bookList)
+            Console.WriteLine("\nYour search returned the following books.");
+            foreach (Book book in bookList.Where(x => x.Author == author.ToUpper()))
             {
-                if (book.Author == author)
-                {
-                    byAuthor.Add(book);
-                }
-            }
-
-            if (!(byAuthor.Count() == 0))
-            {
-                return byAuthor;
-            }
-            else
-            {
-                Console.WriteLine("There are no books by that author in the list.");
-                return null;
+                Console.WriteLine("Title: " + book.Title);
+                Console.WriteLine("Author: " + book.Author);
+                Console.WriteLine("Genre: " + book.Genre);
+                Console.WriteLine("Published: " + book.PubYear);
             }
         }
 
-        public List<Book> FindByGenre(List<Book> bookList, string genre)
+        public void FindByGenre(List<Book> bookList, string genre)
         {
-            List<Book> byGenre = new List<Book>();
-            foreach (Book book in bookList)
+            Console.WriteLine("\nYour search returned the following books.");
+            foreach (Book book in bookList.Where(x => x.Genre == genre.ToUpper()))
             {
-                if (book.Genre == genre)
-                {
-                    byGenre.Add(book);
-                }
-            }
-
-            if (!(byGenre.Count() == 0))
-            {
-                return byGenre;
-            }
-            else
-            {
-                Console.WriteLine("There are no books of that genre in the list.");
-                return null;
+                Console.WriteLine("Title: " + book.Title);
+                Console.WriteLine("Author: " + book.Author);
+                Console.WriteLine("Genre: " + book.Genre);
+                Console.WriteLine("Published: " + book.PubYear);
             }
         }
 
         public void AddBook(List<Book> bookList)
         {
             Book newBook = new Book();
+            newBook.GetProperties();
             bookList.Add(newBook);
         }
 
         public void Quit()
         {
-            Console.WriteLine("Are you sure you would like to quit? (y/n)");
+            Console.WriteLine("\nAre you sure you would like to quit? (y/n)");
             if (Console.ReadLine() == "y")
             {
-
-            }
-            else
-            {
-                
+                Environment.Exit(-1);
             }
         }
     }

@@ -5,3 +5,10 @@ C:\Users\User\Documents\ExperienceIT\misc\LibraryApp\LibraryApp\obj\Debug\Librar
 C:\Users\User\Documents\ExperienceIT\misc\LibraryApp\LibraryApp\obj\Debug\LibraryApp.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\ExperienceIT\misc\LibraryApp\LibraryApp\obj\Debug\LibraryApp.exe
 C:\Users\User\Documents\ExperienceIT\misc\LibraryApp\LibraryApp\obj\Debug\LibraryApp.pdb
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\bin\Debug\LibraryApp.exe.config
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\bin\Debug\LibraryApp.exe
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\bin\Debug\LibraryApp.pdb
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\obj\Debug\LibraryApp.csprojAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\obj\Debug\LibraryApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\obj\Debug\LibraryApp.exe
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\obj\Debug\LibraryApp.pdb

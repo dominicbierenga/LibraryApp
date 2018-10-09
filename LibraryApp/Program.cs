@@ -16,7 +16,20 @@ namespace LibraryApp
             user.AddBook(bookList);
             user.AddBook(bookList);
 
-            
+            List<Movie> movies = new List<Movie>();
+            Movie movie = new Movie();
+
+                
+
+
+
+
+
+
+
+
+
+
         }
     }
 }

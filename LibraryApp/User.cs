@@ -44,18 +44,8 @@ namespace LibraryApp
 
         public void AddBook(List<Book> bookList)
         {
-            Book newBook = new Book();
-            newBook.GetProperties();
+            Book newBook = Book.BuildBook();
             bookList.Add(newBook);
-        }
-
-        public void Quit()
-        {
-            Console.WriteLine("\nAre you sure you would like to quit? (y/n)");
-            if (Console.ReadLine() == "y")
-            {
-                Environment.Exit(-1);
-            }
         }
     }
 }

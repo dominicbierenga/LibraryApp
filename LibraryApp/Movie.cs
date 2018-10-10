@@ -23,10 +23,6 @@ namespace LibraryApp
             Genre = Console.ReadLine();
             Console.WriteLine("Enter the movie's director.");
             Director = Console.ReadLine();
-
-            
         }
     }
-
-}
 }

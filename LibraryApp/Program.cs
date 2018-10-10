@@ -18,7 +18,9 @@ namespace LibraryApp
 
         static void UserMenu(User user, List<Book> bookList)
         {
-            while (true)
+            int action = -1;
+
+            while (action != 5)
             {
                 Console.WriteLine("\nWould you like to \n" +
                 "1. Add a book\n" +
@@ -28,7 +30,7 @@ namespace LibraryApp
                 "5. Exit\n" +
                 "Enter a number for a response: ");
 
-                int action = Convert.ToInt32(Console.ReadLine());
+                action = Convert.ToInt32(Console.ReadLine());
 
                 if (action == 1)
                 {
@@ -51,10 +53,6 @@ namespace LibraryApp
                     Console.WriteLine("Enter the genre you would like to search for: ");
                     string genre = Console.ReadLine();
                     user.FindByGenre(bookList, genre);
-                }
-                else if (action == 5)
-                {
-                    user.Quit();
                 }
             }
         }

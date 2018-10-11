@@ -25,4 +25,8 @@ namespace LibraryApp
             Director = Console.ReadLine();
         }
     }
+<<<<<<< HEAD
+
+=======
+>>>>>>> e67288278e572b41b3318fb49f23a873032ef3be
 }

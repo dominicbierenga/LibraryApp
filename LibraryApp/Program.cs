@@ -29,7 +29,10 @@ namespace LibraryApp
                 "4. Search by genre\n" +
                 "5. Exit\n" +
                 "Enter a number for a response: ");
+
+
                 try
+
                 {
                     action = Convert.ToInt32(Console.ReadLine());
 

@@ -10,6 +10,7 @@ namespace LibraryApp
         public void FindByTitle(List<Book> bookList, string title)
         {
             Console.WriteLine("\nYour search returned the following books.");
+  
             foreach (Book book in bookList.Where(x => x.Title.Contains(title.ToUpper())))
             {
                 Console.WriteLine("Title: " + JoinStringArray(book.Title));
@@ -17,6 +18,7 @@ namespace LibraryApp
                 Console.WriteLine("Genre: " + JoinStringArray(book.Genre));
                 Console.WriteLine("Published: " + book.PubYear + "\n");
             }
+            
         }
 
         public void FindByAuthor(List<Book> bookList, string author)

@@ -12,3 +12,10 @@ C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\obj\Debug\LibraryA
 C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\obj\Debug\LibraryApp.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\obj\Debug\LibraryApp.exe
 C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\obj\Debug\LibraryApp.pdb
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\LibraryApp\obj\Debug\LibraryApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\LibraryApp\obj\Debug\LibraryApp.exe
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\LibraryApp\obj\Debug\LibraryApp.pdb
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\LibraryApp\bin\Debug\LibraryApp.exe.config
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\LibraryApp\bin\Debug\LibraryApp.exe
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\LibraryApp\bin\Debug\LibraryApp.pdb
+C:\Users\User\Documents\Visual Studio 2017\Midterm\LibraryApp\LibraryApp\obj\Debug\LibraryApp.csprojAssemblyReference.cache

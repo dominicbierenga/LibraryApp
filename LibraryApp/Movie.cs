@@ -8,25 +8,32 @@ namespace LibraryApp
 {
     public class Movie
     {
-        public string Title { get; set; }
-        public string Actor { get; set; }
-        public string Genre { get; set; }
-        public string Director { get; set; }
+        public string[] Title { get; set; }
+        public string[] Actor { get; set; }
+        public string[] Genre { get; set; }
+        public string[] Director { get; set; }
 
-        public Movie()
+        private Movie(string[] title, string[] director, string[] genre, string[] actor)
+       {
+            Title = title;
+            Director = director;
+            Genre = genre;
+            Actor = actor; 
+
+        }
+        public static Movie BuildMovie() 
         {
             Console.WriteLine("Enter the movie's title.");
-            Title = Console.ReadLine();
-            Console.WriteLine("Enter the movie's actor.");
-            Actor = Console.ReadLine();
-            Console.WriteLine("Enter the movie's genre.");
-            Genre = Console.ReadLine();
+            string[] title = Console.ReadLine().Trim().ToUpper().Split(' ');
             Console.WriteLine("Enter the movie's director.");
-            Director = Console.ReadLine();
-        }
-    }
-<<<<<<< HEAD
+            string[] director = Console.ReadLine().Trim().ToUpper().Split(' ');
+            Console.WriteLine("Enter the movie's genre.");
+            string[] genre = Console.ReadLine().Trim().ToUpper().Split(' ');
+            Console.WriteLine("Enter the movie's main actor.");
+            string[] actor = Console.ReadLine().Trim().ToUpper().Split(' ');
 
-=======
->>>>>>> e67288278e572b41b3318fb49f23a873032ef3be
+            return new Movie(title, director, genre, actor);
+        } 
+
+    }
 }

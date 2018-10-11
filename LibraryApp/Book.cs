@@ -13,7 +13,6 @@ namespace LibraryApp
         public string[] Genre { get; set; }
         public int PubYear { get; set; }
 
-<<<<<<< HEAD
         private int counter = 0;
         private string title;
         public string GetTitle() {
@@ -22,8 +21,6 @@ namespace LibraryApp
         }
         public void SetTitle(string title) { this.title = title; }
 
-        public void GetProperties()
-=======
         private Book(string[] title, string[] author, string[] genre, int pubYear)
         {
             Title = title;
@@ -33,7 +30,6 @@ namespace LibraryApp
         }
 
         public static Book BuildBook()
->>>>>>> e67288278e572b41b3318fb49f23a873032ef3be
         {
             Console.WriteLine("Enter the book's title.");
             string[] title = Console.ReadLine().Trim().ToUpper().Split(' ');

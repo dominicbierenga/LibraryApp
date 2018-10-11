@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Linq;
 
 namespace LibraryApp
@@ -9,6 +10,7 @@ namespace LibraryApp
         public void FindByTitle(List<Book> bookList, string title)
         {
             Console.WriteLine("\nYour search returned the following books.");
+<<<<<<< HEAD
 
             for (int i=0; i<bookList.Count; i++)
             {
@@ -27,11 +29,14 @@ namespace LibraryApp
 
             /*
             foreach (Book book in bookList.Where(x => x.Title == title.ToUpper()))
+=======
+            foreach (Book book in bookList.Where(x => x.Title.Contains(title.ToUpper())))
+>>>>>>> e67288278e572b41b3318fb49f23a873032ef3be
             {
-                Console.WriteLine("Title: " + book.Title);
-                Console.WriteLine("Author: " + book.Author);
-                Console.WriteLine("Genre: " + book.Genre);
-                Console.WriteLine("Published: " + book.PubYear);
+                Console.WriteLine("Title: " + JoinStringArray(book.Title));
+                Console.WriteLine("Author: " + JoinStringArray(book.Author));
+                Console.WriteLine("Genre: " + JoinStringArray(book.Genre));
+                Console.WriteLine("Published: " + book.PubYear + "\n");
             }
             */
         }
@@ -39,41 +44,42 @@ namespace LibraryApp
         public void FindByAuthor(List<Book> bookList, string author)
         {
             Console.WriteLine("\nYour search returned the following books.");
-            foreach (Book book in bookList.Where(x => x.Author == author.ToUpper()))
+            foreach (Book book in bookList.Where(x => x.Author.Contains(author.ToUpper())))
             {
-                Console.WriteLine("Title: " + book.Title);
-                Console.WriteLine("Author: " + book.Author);
-                Console.WriteLine("Genre: " + book.Genre);
-                Console.WriteLine("Published: " + book.PubYear);
+                Console.WriteLine("Title: " + JoinStringArray(book.Title));
+                Console.WriteLine("Author: " + JoinStringArray(book.Author));
+                Console.WriteLine("Genre: " + JoinStringArray(book.Genre));
+                Console.WriteLine("Published: " + book.PubYear + "\n");
             }
         }
 
         public void FindByGenre(List<Book> bookList, string genre)
         {
             Console.WriteLine("\nYour search returned the following books.");
-            foreach (Book book in bookList.Where(x => x.Genre == genre.ToUpper()))
+            foreach (Book book in bookList.Where(x => x.Genre.Contains(genre.ToUpper())))
             {
-                Console.WriteLine("Title: " + book.Title);
-                Console.WriteLine("Author: " + book.Author);
-                Console.WriteLine("Genre: " + book.Genre);
-                Console.WriteLine("Published: " + book.PubYear);
+                Console.WriteLine("Title: " + JoinStringArray(book.Title));
+                Console.WriteLine("Author: " + JoinStringArray(book.Author));
+                Console.WriteLine("Genre: " + JoinStringArray(book.Genre));
+                Console.WriteLine("Published: " + book.PubYear + "\n");
             }
         }
 
         public void AddBook(List<Book> bookList)
         {
-            Book newBook = new Book();
-            newBook.GetProperties();
+            Book newBook = Book.BuildBook();
             bookList.Add(newBook);
         }
 
-        public void Quit()
+        private string JoinStringArray(string[] a)
         {
-            Console.WriteLine("\nAre you sure you would like to quit? (y/n)");
-            if (Console.ReadLine() == "y")
+            StringBuilder builder = new StringBuilder();
+            foreach (string word in a)
             {
-                Environment.Exit(-1);
+                builder.Append(word);
+                builder.Append(" ");
             }
+            return builder.ToString().Trim();
         }
     }
 }

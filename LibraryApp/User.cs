@@ -19,6 +19,17 @@ namespace LibraryApp
             }
         }
 
+        public void FindMovieByTitle(List<Movie> movieList, string title)
+        {
+            foreach (Movie movie in movieList.Where(x => x.Title.Contains(title.ToUpper())))
+            {
+                Console.WriteLine("Title: " + JoinStringArray(movie.Title));
+                Console.WriteLine("Director: " + JoinStringArray(movie.Director));
+                Console.WriteLine("Genre: " + JoinStringArray(movie.Genre));
+                Console.WriteLine("Main Actor: " + JoinStringArray(movie.Actor) + "\n");
+            }
+        }
+
         public void FindByAuthor(List<Book> bookList, string author)
         {
             Console.WriteLine("\nYour search returned the following books.");

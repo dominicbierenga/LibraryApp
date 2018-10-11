@@ -13,6 +13,14 @@ namespace LibraryApp
         public string Genre { get; set; }
         public int PubYear { get; set; }
 
+        private int counter = 0;
+        private string title;
+        public string GetTitle() {
+            counter++;
+            return title;
+        }
+        public void SetTitle(string title) { this.title = title; }
+
         public void GetProperties()
         {
             Console.WriteLine("Enter the book's title.");

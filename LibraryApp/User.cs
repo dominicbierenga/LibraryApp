@@ -9,6 +9,23 @@ namespace LibraryApp
         public void FindByTitle(List<Book> bookList, string title)
         {
             Console.WriteLine("\nYour search returned the following books.");
+
+            for (int i=0; i<bookList.Count; i++)
+            {
+                Book book = bookList[i];
+                if (book.Title == title.ToUpper())
+                {
+                    Console.WriteLine("Title: " + book.Title);
+                    Console.WriteLine("Author: " + book.Author);
+                    Console.WriteLine("Genre: " + book.Genre);
+                    Console.WriteLine("Published: " + book.PubYear);
+                    break;
+                }
+            }
+
+
+
+            /*
             foreach (Book book in bookList.Where(x => x.Title == title.ToUpper()))
             {
                 Console.WriteLine("Title: " + book.Title);
@@ -16,6 +33,7 @@ namespace LibraryApp
                 Console.WriteLine("Genre: " + book.Genre);
                 Console.WriteLine("Published: " + book.PubYear);
             }
+            */
         }
 
         public void FindByAuthor(List<Book> bookList, string author)

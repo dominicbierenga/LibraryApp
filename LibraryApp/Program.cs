@@ -18,7 +18,8 @@ namespace LibraryApp
 
         static void UserMenu(User user, List<Book> bookList)
         {
-            while (true)
+            bool keepRunning = true;
+            while (keepRunning)
             {
                 Console.WriteLine("\nWould you like to \n" +
                 "1. Add a book\n" +
@@ -34,7 +35,7 @@ namespace LibraryApp
                 {
                     user.AddBook(bookList);
                 }
-                else if (action == 2)
+                else  if (action == 2)
                 {
                     Console.WriteLine("Enter the title you would like to search for: ");
                     string title = Console.ReadLine();
@@ -54,7 +55,8 @@ namespace LibraryApp
                 }
                 else if (action == 5)
                 {
-                    user.Quit();
+                    //user.Quit();
+                    keepRunning = false;
                 }
             }
         }

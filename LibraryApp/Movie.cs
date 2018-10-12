@@ -14,13 +14,13 @@ namespace LibraryApp
         public string[] Director { get; set; }
 
         private Movie(string[] title, string[] director, string[] genre, string[] actor)
-       {
+        {
             Title = title;
             Director = director;
             Genre = genre;
             Actor = actor; 
-
         }
+
         public static Movie BuildMovie() 
         {
             Console.WriteLine("Enter the movie's title.");
@@ -34,6 +34,5 @@ namespace LibraryApp
 
             return new Movie(title, director, genre, actor);
         } 
-
     }
 }

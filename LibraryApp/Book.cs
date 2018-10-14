@@ -13,14 +13,6 @@ namespace LibraryApp
         public string[] Genre { get; set; }
         public int PubYear { get; set; }
 
-        private int counter = 0;
-        private string title;
-        public string GetTitle() {
-            counter++;
-            return title;
-        }
-        public void SetTitle(string title) { this.title = title; }
-
         private Book(string[] title, string[] author, string[] genre, int pubYear)
         {
             Title = title;
@@ -43,7 +35,7 @@ namespace LibraryApp
                 int pubYear = Convert.ToInt32(Console.ReadLine());
                 return new Book(title, author, genre, pubYear);
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 Console.WriteLine("Publication year must be an integer.");
                 return null;

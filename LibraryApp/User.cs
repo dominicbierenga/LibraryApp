@@ -7,10 +7,9 @@ namespace LibraryApp
 {
     public class User
     {
-        public void FindByTitle(List<Book> bookList, string title)
+        public virtual void FindBookByTitle(List<Book> bookList, string title)
         {
             Console.WriteLine("\nYour search returned the following books.");
-  
             foreach (Book book in bookList.Where(x => x.Title.Contains(title.ToUpper())))
             {
                 Console.WriteLine("Title: " + JoinStringArray(book.Title));
@@ -18,7 +17,6 @@ namespace LibraryApp
                 Console.WriteLine("Genre: " + JoinStringArray(book.Genre));
                 Console.WriteLine("Published: " + book.PubYear + "\n");
             }
-            
         }
 
         public void FindByAuthor(List<Book> bookList, string author)
@@ -33,7 +31,7 @@ namespace LibraryApp
             }
         }
 
-        public void FindByGenre(List<Book> bookList, string genre)
+        public void FindBookByGenre(List<Book> bookList, string genre)
         {
             Console.WriteLine("\nYour search returned the following books.");
             foreach (Book book in bookList.Where(x => x.Genre.Contains(genre.ToUpper())))
@@ -49,6 +47,60 @@ namespace LibraryApp
         {
             Book newBook = Book.BuildBook();
             bookList.Add(newBook);
+        }
+
+        public void FindMovieByTitle(List<Movie> movieList, string title)
+        {
+            Console.WriteLine("\nYour search returned the following movies.");
+            foreach (Movie movie in movieList.Where(x => x.Title.Contains(title.ToUpper())))
+            {
+                Console.WriteLine("Title: " + JoinStringArray(movie.Title));
+                Console.WriteLine("Director: " + JoinStringArray(movie.Director));
+                Console.WriteLine("Genre: " + JoinStringArray(movie.Genre));
+                Console.WriteLine("Main Actor: " + JoinStringArray(movie.Actor) + "\n");
+            }
+        }
+
+        public void FindMovieByDirector(List<Movie> movieList, string director)
+        {
+            Console.WriteLine("\nYour search returned the following movies.");
+            foreach (Movie movie in movieList.Where(x => x.Director.Contains(director.ToUpper())))
+            {
+                Console.WriteLine("Title: " + JoinStringArray(movie.Title));
+                Console.WriteLine("Director: " + JoinStringArray(movie.Director));
+                Console.WriteLine("Genre: " + JoinStringArray(movie.Genre));
+                Console.WriteLine("Main Actor: " + JoinStringArray(movie.Actor) + "\n");
+            }
+        }
+
+        public void FindMovieByGenre(List<Movie> movieList, string genre)
+        {
+            Console.WriteLine("\nYour search returned the following movies.");
+            foreach (Movie movie in movieList.Where(x => x.Genre.Contains(genre.ToUpper())))
+            {
+                Console.WriteLine("Title: " + JoinStringArray(movie.Title));
+                Console.WriteLine("Director: " + JoinStringArray(movie.Director));
+                Console.WriteLine("Genre: " + JoinStringArray(movie.Genre));
+                Console.WriteLine("Main Actor: " + JoinStringArray(movie.Actor) + "\n");
+            }
+        }
+
+        public void FindMovieByActor(List<Movie> movieList, string actor)
+        {
+            Console.WriteLine("\nYour search returned the following movies.");
+            foreach (Movie movie in movieList.Where(x => x.Actor.Contains(actor.ToUpper())))
+            {
+                Console.WriteLine("Title: " + JoinStringArray(movie.Title));
+                Console.WriteLine("Director: " + JoinStringArray(movie.Director));
+                Console.WriteLine("Genre: " + JoinStringArray(movie.Genre));
+                Console.WriteLine("Main Actor: " + JoinStringArray(movie.Actor) + "\n");
+            }
+        }
+
+        public void AddMovie(List<Movie> movieList)
+        {
+            Movie newMovie = Movie.BuildMovie();
+            movieList.Add(newMovie);
         }
 
         private string JoinStringArray(string[] a)

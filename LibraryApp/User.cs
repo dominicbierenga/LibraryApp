@@ -23,8 +23,8 @@ namespace LibraryApp
 
         public void SearchBookByAuthor(List<Book> bList, string BookAuthor)
         {
-            List<Book> books = bList.Where(s => s.Author == BookAuthor).ToList();
-            if (books == null)
+            List<Book> books = bList.Where(s => s.Author == BookAuthor.ToUpper()).ToList();
+            if (books.Count() == 0)
             {
                 Console.WriteLine("Sorry No book found with this author name.");
             }
@@ -40,8 +40,8 @@ namespace LibraryApp
 
         public void SearchBookByGenre(List<Book> bList, string BookGenre)
         {
-            List<Book> books = bList.Where(s => s.Genre == BookGenre).ToList();
-            if (books == null)
+            List<Book> books = bList.Where(s => s.Genre == BookGenre.ToUpper()).ToList();
+            if (books.Count() == 0)
             {
                 Console.WriteLine("Sorry No book found with this Genre");
             }

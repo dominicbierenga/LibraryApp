@@ -8,12 +8,12 @@ namespace LibraryApp
 {
     public class Book
     {
-        public string[] Title { get; set; }
-        public string[] Author { get; set; }
-        public string[] Genre { get; set; }
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public string Genre { get; set; }
         public int PubYear { get; set; }
 
-        private Book(string[] title, string[] author, string[] genre, int pubYear)
+        private Book(string title, string author, string genre, int pubYear)
         {
             Title = title;
             Author = author;
@@ -24,11 +24,11 @@ namespace LibraryApp
         public static Book BuildBook()
         {
             Console.WriteLine("Enter the book's title.");
-            string[] title = Console.ReadLine().Trim().ToUpper().Split(' ');
+            string title = Console.ReadLine().Trim().ToUpper();
             Console.WriteLine("Enter the book's author.");
-            string[] author = Console.ReadLine().Trim().ToUpper().Split(' ');
+            string author = Console.ReadLine().Trim().ToUpper();
             Console.WriteLine("Enter the book's genre.");
-            string[] genre = Console.ReadLine().Trim().ToUpper().Split(' ');
+            string genre = Console.ReadLine().Trim().ToUpper();
             Console.WriteLine("Enter the book's year of publication.");
             try
             {

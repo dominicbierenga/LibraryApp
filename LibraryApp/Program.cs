@@ -56,14 +56,16 @@ namespace LibraryApp
 
         static void LibraryMenu(int action, List<Book> bookList, User user)
         {
-            while (action != 5)
+            while (action != 7)
             {
                 Console.WriteLine("\nWould you like to \n" +
                     "1. Add a book\n" +
-                    "2. Search by title\n" +
-                    "3. Search by author\n" +
-                    "4. Search by genre\n" +
-                    "5. Switch functionalities\n" +
+                    "2. Delete a book\n" +
+                    "3. Search by title\n" +
+                    "4. Search by author\n" +
+                    "5. Search by genre\n" +
+                    "6. Display the list of books\n" +
+                    "7. Switch functionalities\n" +
                     "Enter a number for a response: ");
 
                 try
@@ -76,21 +78,31 @@ namespace LibraryApp
                     }
                     else if (action == 2)
                     {
+                        Console.WriteLine("Enter the title of the book you would like to delete: ");
+                        string title = Console.ReadLine();
+                        user.DeleteBook(bookList, title);
+                    }
+                    else if (action == 3)
+                    {
                         Console.WriteLine("Enter the title you would like to search for: ");
                         string title = Console.ReadLine();
                         user.FindBookByTitle(bookList, title);
                     }
-                    else if (action == 3)
+                    else if (action == 4)
                     {
                         Console.WriteLine("Enter the author you would like to search for: ");
                         string author = Console.ReadLine();
-                        user.FindByAuthor(bookList, author);
+                        user.SearchBookByAuthor(bookList, author);
                     }
-                    else if (action == 4)
+                    else if (action == 5)
                     {
                         Console.WriteLine("Enter the genre you would like to search for: ");
                         string genre = Console.ReadLine();
-                        user.FindBookByGenre(bookList, genre);
+                        user.SearchBookByGenre(bookList, genre);
+                    }
+                    else if (action == 6)
+                    {
+                        user.GetListofBooks(bookList);
                     }
                 }
                 catch (FormatException)
@@ -102,15 +114,17 @@ namespace LibraryApp
 
         static void MovieMenu(int action, List<Movie> movieList, User user)
         {
-            while (action != 6)
+            while (action != 8)
             {
                 Console.WriteLine("\nWould you like to \n" +
                     "1. Add a movie\n" +
-                    "2. Search by title\n" +
-                    "3. Search by director\n" +
-                    "4. Search by genre\n" +
-                    "5. Search by lead actor/actress\n" +
-                    "6. Switch functionalities\n" +
+                    "2. Delete a movie\n" +
+                    "3. Search by title\n" +
+                    "4. Search by director\n" +
+                    "5. Search by genre\n" +
+                    "6. Search by lead actor/actress\n" +
+                    "7. Display the list of movies\n" +
+                    "8. Switch functionalities\n" +
                     "Enter a number for a response: ");
 
                 try
@@ -123,27 +137,37 @@ namespace LibraryApp
                     }
                     else if (action == 2)
                     {
+                        Console.WriteLine("Enter the title of the movie you would like to delete: ");
+                        string title = Console.ReadLine();
+                        user.DeleteMovie(movieList, title);
+                    }
+                    else if (action == 3)
+                    {
                         Console.WriteLine("Enter the title you would like to search for: ");
                         string title = Console.ReadLine();
                         user.FindMovieByTitle(movieList, title);
                     }
-                    else if (action == 3)
+                    else if (action == 4)
                     {
                         Console.WriteLine("Enter the director you would like to search for: ");
                         string director = Console.ReadLine();
                         user.FindMovieByDirector(movieList, director);
                     }
-                    else if (action == 4)
+                    else if (action == 5)
                     {
                         Console.WriteLine("Enter the genre you would like to search for: ");
                         string genre = Console.ReadLine();
                         user.FindMovieByGenre(movieList, genre);
                     }
-                    else if (action == 5)
+                    else if (action == 6)
                     {
                         Console.WriteLine("Enter the actor/actress you would like to search for: ");
                         string actor = Console.ReadLine();
                         user.FindMovieByActor(movieList, actor);
+                    }
+                    else if (action == 7)
+                    {
+                        user.GetListofMovies(movieList);
                     }
                 }
                 catch (FormatException)

@@ -7,39 +7,61 @@ namespace LibraryApp
 {
     public class User
     {
+        #region Book Methods
+
         public virtual void FindBookByTitle(List<Book> bookList, string title)
         {
             Console.WriteLine("\nYour search returned the following books.");
             foreach (Book book in bookList.Where(x => x.Title.Contains(title.ToUpper())))
             {
-                Console.WriteLine("Title: " + JoinStringArray(book.Title));
-                Console.WriteLine("Author: " + JoinStringArray(book.Author));
-                Console.WriteLine("Genre: " + JoinStringArray(book.Genre));
+                Console.WriteLine("Title: " + book.Title);
+                Console.WriteLine("Author: " + book.Author);
+                Console.WriteLine("Genre: " + book.Genre);
                 Console.WriteLine("Published: " + book.PubYear + "\n");
             }
         }
 
-        public void FindByAuthor(List<Book> bookList, string author)
+        public void SearchBookByAuthor(List<Book> bList, string BookAuthor)
         {
-            Console.WriteLine("\nYour search returned the following books.");
-            foreach (Book book in bookList.Where(x => x.Author.Contains(author.ToUpper())))
+            List<Book> books = bList.Where(s => s.Author == BookAuthor).ToList();
+            if (books == null)
             {
-                Console.WriteLine("Title: " + JoinStringArray(book.Title));
-                Console.WriteLine("Author: " + JoinStringArray(book.Author));
-                Console.WriteLine("Genre: " + JoinStringArray(book.Genre));
-                Console.WriteLine("Published: " + book.PubYear + "\n");
+                Console.WriteLine("Sorry No book found with this author name.");
+            }
+            else
+            {
+                Console.WriteLine("List of Books with Author");
+                foreach (var item in books)
+                {
+                    Console.WriteLine("\n{0} \t {1} \t {2} \t {3}", item.Title, item.Author, item.Genre, item.PubYear);
+                }
             }
         }
 
-        public void FindBookByGenre(List<Book> bookList, string genre)
+        public void SearchBookByGenre(List<Book> bList, string BookGenre)
         {
-            Console.WriteLine("\nYour search returned the following books.");
-            foreach (Book book in bookList.Where(x => x.Genre.Contains(genre.ToUpper())))
+            List<Book> books = bList.Where(s => s.Genre == BookGenre).ToList();
+            if (books == null)
             {
-                Console.WriteLine("Title: " + JoinStringArray(book.Title));
-                Console.WriteLine("Author: " + JoinStringArray(book.Author));
-                Console.WriteLine("Genre: " + JoinStringArray(book.Genre));
-                Console.WriteLine("Published: " + book.PubYear + "\n");
+                Console.WriteLine("Sorry No book found with this Genre");
+            }
+            else
+            {
+                Console.WriteLine("List of Books with Genre");
+                foreach (var item in books)
+                {
+                    Console.WriteLine("\n{0} \t {1} \t {2} \t {3}", item.Title, item.Author, item.Genre, item.PubYear);
+                }
+
+            }
+        }
+
+        public void GetListofBooks(List<Book> bList)
+        {
+            Console.WriteLine("List of Books");
+            foreach (var item in bList)
+            {
+                Console.WriteLine("\n{0} \t {1} \t {2} \t {3}", item.Title, item.Author, item.Genre, item.PubYear);
             }
         }
 
@@ -49,15 +71,30 @@ namespace LibraryApp
             bookList.Add(newBook);
         }
 
+        public void DeleteBook(List<Book> bookList, string title)
+        {
+            foreach (Book book in bookList)
+            {
+                if (title.ToUpper() == book.Title)
+                {
+                    bookList.Remove(book);
+                    break;
+                }
+            }
+        }
+
+        #endregion
+        #region Movie Methods
+
         public void FindMovieByTitle(List<Movie> movieList, string title)
         {
             Console.WriteLine("\nYour search returned the following movies.");
             foreach (Movie movie in movieList.Where(x => x.Title.Contains(title.ToUpper())))
             {
-                Console.WriteLine("Title: " + JoinStringArray(movie.Title));
-                Console.WriteLine("Director: " + JoinStringArray(movie.Director));
-                Console.WriteLine("Genre: " + JoinStringArray(movie.Genre));
-                Console.WriteLine("Main Actor: " + JoinStringArray(movie.Actor) + "\n");
+                Console.WriteLine("Title: " + movie.Title);
+                Console.WriteLine("Director: " + movie.Director);
+                Console.WriteLine("Genre: " + movie.Genre);
+                Console.WriteLine("Main Actor: " + movie.Actor + "\n");
             }
         }
 
@@ -66,10 +103,10 @@ namespace LibraryApp
             Console.WriteLine("\nYour search returned the following movies.");
             foreach (Movie movie in movieList.Where(x => x.Director.Contains(director.ToUpper())))
             {
-                Console.WriteLine("Title: " + JoinStringArray(movie.Title));
-                Console.WriteLine("Director: " + JoinStringArray(movie.Director));
-                Console.WriteLine("Genre: " + JoinStringArray(movie.Genre));
-                Console.WriteLine("Main Actor: " + JoinStringArray(movie.Actor) + "\n");
+                Console.WriteLine("Title: " + movie.Title);
+                Console.WriteLine("Director: " + movie.Director);
+                Console.WriteLine("Genre: " + movie.Genre);
+                Console.WriteLine("Main Actor: " + movie.Actor + "\n");
             }
         }
 
@@ -78,10 +115,10 @@ namespace LibraryApp
             Console.WriteLine("\nYour search returned the following movies.");
             foreach (Movie movie in movieList.Where(x => x.Genre.Contains(genre.ToUpper())))
             {
-                Console.WriteLine("Title: " + JoinStringArray(movie.Title));
-                Console.WriteLine("Director: " + JoinStringArray(movie.Director));
-                Console.WriteLine("Genre: " + JoinStringArray(movie.Genre));
-                Console.WriteLine("Main Actor: " + JoinStringArray(movie.Actor) + "\n");
+                Console.WriteLine("Title: " + movie.Title);
+                Console.WriteLine("Director: " + movie.Director);
+                Console.WriteLine("Genre: " + movie.Genre);
+                Console.WriteLine("Main Actor: " + movie.Actor + "\n");
             }
         }
 
@@ -90,10 +127,19 @@ namespace LibraryApp
             Console.WriteLine("\nYour search returned the following movies.");
             foreach (Movie movie in movieList.Where(x => x.Actor.Contains(actor.ToUpper())))
             {
-                Console.WriteLine("Title: " + JoinStringArray(movie.Title));
-                Console.WriteLine("Director: " + JoinStringArray(movie.Director));
-                Console.WriteLine("Genre: " + JoinStringArray(movie.Genre));
-                Console.WriteLine("Main Actor: " + JoinStringArray(movie.Actor) + "\n");
+                Console.WriteLine("Title: " + movie.Title);
+                Console.WriteLine("Director: " + movie.Director);
+                Console.WriteLine("Genre: " + movie.Genre);
+                Console.WriteLine("Main Actor: " + movie.Actor + "\n");
+            }
+        }
+
+        public void GetListofMovies(List<Movie> movieList)
+        {
+            Console.WriteLine("List of Movies");
+            foreach (var item in movieList)
+            {
+                Console.WriteLine("\n{0} \t {1} \t {2} \t {3}", item.Title, item.Director, item.Genre, item.Actor);
             }
         }
 
@@ -103,15 +149,18 @@ namespace LibraryApp
             movieList.Add(newMovie);
         }
 
-        private string JoinStringArray(string[] a)
+        public void DeleteMovie(List<Movie> movieList, string title)
         {
-            StringBuilder builder = new StringBuilder();
-            foreach (string word in a)
+            foreach (Movie movie in movieList)
             {
-                builder.Append(word);
-                builder.Append(" ");
+                if (title.ToUpper() == movie.Title)
+                {
+                    movieList.Remove(movie);
+                    break;
+                }
             }
-            return builder.ToString().Trim();
         }
+
+        #endregion
     }
 }
